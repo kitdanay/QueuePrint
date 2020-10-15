@@ -1,0 +1,181 @@
+﻿@model WebQueue_PR9.Models.molScanQueue
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Praram 9 Hospital</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../Template/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="../Template/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../Template/dist/css/adminlte.min.css">
+
+    <link href="../fonts/font.css" rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    @*<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">*@
+
+    <style>
+        body {
+            margin: 0;
+            /*font-family: "Mitr Light",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";*/
+            font-family: "db_ozone_xmedium",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #212529;
+            /*text-align: left;*/
+            background-color: #fff;
+        }
+
+        img {
+            /*padding:10px;*/
+            width: 260px;
+            /*height:200px;*/
+        }
+
+        .login-logo, .register-logo {
+            font-family: "db_ozone_xmedium";
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: .9rem;
+            text-align: center;
+        }
+
+        .login-box-msg, .register-box-msg {
+            font-family: "db_ozone_xmedium";
+            font-size: 1.3rem;
+            margin: 0;
+            padding: 0 20px 20px;
+            text-align: center;
+        }
+
+        .input-group > .custom-file, .input-group > .custom-select, .input-group > .form-control, .input-group > .form-control-plaintext {
+            font-family: "Mitr Light",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-size: 1rem;
+            position: relative;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            width: 1%;
+            margin-bottom: 0;
+        }
+
+        button:not(:disabled) {
+            font-family: "db_ozone_xmedium";
+            cursor: pointer;
+            font-size: 1.3rem;
+        }
+
+        label:not(.form-check-label):not(.custom-file-label) {
+            font-family: "db_ozone_xmedium";
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .frame {
+            width: 100%;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        a {
+            margin: 20px;
+        }
+
+        .custom-btn {
+            width: 490px;
+            height: 100px;
+            color: rgb(5, 0, 0);
+            border-radius: 25px;
+            padding: 20px 25px;
+            font-family:  initial;
+            font-weight: 200;
+            font-size: xx-large;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(18, 212, 60, 0.1), 4px 4px 5px 0px rgba(201, 28, 28, 0.1);
+            outline: none;
+        }
+
+        .btn-1 {
+            background: rgb(241, 242, 245);
+            background: linear-gradient(0deg, rgb(250, 249, 250) 0%, rgb(212, 215, 247) 100%);
+            border: none;
+        }
+
+            .btn-1:hover {
+                background: rgb(220, 220, 223);
+                background: linear-gradient(0deg, rgb(9, 67, 134) 0%, rgb(158, 216, 250) 100%);
+            }
+    </style>
+</head>
+@*style="background-image:url(../Template/dist/img/new_pr2.png)" onLoad="document.getElementById('moltxtDataSearch').focus();"*@
+<body class="hold-transition login-page">
+    @*onload="startTime()"*@
+    <table style="width:100%;">
+        <tr>
+            <td style="width: 65%; height: 20px; background-color:#FFFFFF;"><img src="../Template/dist/img/img/ramm9.jpg"></td>
+            <td style="background-color:#008080; width: 30%; height: 120px;">&nbsp;</td>
+            <td style="width: 5%;height: 20px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="background-color:#489999;width: 65%;height: 420px;">
+                <div class="frame">
+
+                    <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'A' })" class="custom-btn btn-1">A: ผู้ป่วยใหม่</a>
+                    <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'B' })" class="custom-btn btn-1">B: ผู้ป่วยค้างตรวจ</a>
+                    <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'C' })" class="custom-btn btn-1">C: ผู้ป่วยรอทำประวัติ</a>
+
+
+
+                    @*<a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'A' })" class="custom-btn btn-1">A: ผู้ป่วยใหม่</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'B' })" class="custom-btn btn-1">B: ผู้ป่วยค้างตรวจ</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'C' })" class="custom-btn btn-1">C: ผู้ป่วยรอทำประวัติ</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'D' })" class="custom-btn btn-1">D: ผู้ป่วยเก่า</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'E' })" class="custom-btn btn-1">E: ผู้ป่วยนัดหมาย</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'F' })" class="custom-btn btn-1">F: อื่นๆ</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'F' })" class="custom-btn btn-1">F: อื่นๆ</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'F' })" class="custom-btn btn-1">F: อื่นๆ</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'F' })" class="custom-btn btn-1">F: อื่นๆ</a>
+                        <a href="@Url.Action("onprintsave", "ScanQueue", new { abc = 'G' })" class="custom-btn btn-1">G: ผู้ป่วยค้างตรวจ</a>*@
+
+                </div>
+            </td>
+            <td style="background-color: #004d4d; width: 30%;height: 420px;"></td>
+            <td style="background-color: #489999;width: 5%;height: 420px;"></td>
+        </tr>
+        <tr>
+            <td style="width: 65%;height: 70px;">&nbsp;</td>
+            <td style="background-color:#008080; width: 30%;height: 70px;">&nbsp;</td>
+            <td style="width: 5%;height: 70px;">&nbsp;</td>
+        </tr>
+    </table>
+    <script src="~/Template/plugins/jquery/jquery.min.js"></script>
+
+
+
+
+
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="../Template/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../Template/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../Template/dist/js/adminlte.min.js"></script>
+
+</body>
+
+</html>
+
